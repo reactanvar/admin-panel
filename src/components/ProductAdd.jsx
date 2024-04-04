@@ -7,6 +7,7 @@ const ProductAdd = () => {
     desc: "",
     price: "",
     oldPrice: "",
+    category: "konteyner",
     image: null,
   });
 
@@ -28,7 +29,7 @@ const ProductAdd = () => {
     setLoading(true);
 
     try {
-      const { name, desc, price, oldPrice, image } = formData;
+      const { name, desc, price, oldPrice, image, category } = formData;
 
       const formDataToSend = new FormData();
       formDataToSend.append("name", name);
@@ -36,9 +37,10 @@ const ProductAdd = () => {
       formDataToSend.append("price", price);
       formDataToSend.append("oldPrice", oldPrice);
       formDataToSend.append("image", image);
+      formDataToSend.append("category", category);
 
       const response = await fetch(
-        "https://containers-backend.onrender.com/api/product/add/",
+        "https://devlans-43e2a3ba66d7.herokuapp.com/api/product/add/",
         {
           method: "POST",
           body: formDataToSend,
@@ -97,9 +99,14 @@ const ProductAdd = () => {
             ></textarea>
           </div>
 
-          <select required name="" id="">
-            <option value="">Yuk tashuvchi konteyner</option>
-            <option value="">Saqlovchi konteyner</option>
+          <select required 
+            id="category"
+            name="category"
+            value={formData.category}
+            onChange={handleInputChange}
+          >
+            <option value="konteyner">Konteyner</option>
+            <option value="ehtiyotQism">Ehtiyot qism</option>
           </select>
 
           <div className="form-group">

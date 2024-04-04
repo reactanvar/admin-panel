@@ -30,7 +30,7 @@ const EditProduct = ({ product, setProduct, setIsOpen }) => {
       };
 
       const response = await fetch(
-        "https://containers-backend.onrender.com/api/product/update/" + id,
+        "https://devlans-43e2a3ba66d7.herokuapp.com/api/product/update/" + id,
         {
           method: "PATCH",
           body: JSON.stringify(formDataToSend),
@@ -87,7 +87,7 @@ const EditProduct = ({ product, setProduct, setIsOpen }) => {
     >
       <form onSubmit={(e) => handleEdit(e, product.id)} className="container">
         <div className="form-group">
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">Nomi:</label>
           <input
             type="text"
             className="form-control"
@@ -100,7 +100,7 @@ const EditProduct = ({ product, setProduct, setIsOpen }) => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="desc">Description:</label>
+          <label htmlFor="desc">Tavsif:</label>
           <textarea
             className="form-control"
             id="desc"
@@ -113,7 +113,7 @@ const EditProduct = ({ product, setProduct, setIsOpen }) => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="price">Price:</label>
+          <label htmlFor="price">Narxi:</label>
           <input
             type="text"
             className="form-control"
@@ -126,7 +126,7 @@ const EditProduct = ({ product, setProduct, setIsOpen }) => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="oldPrice">Old Price:</label>
+          <label htmlFor="oldPrice">Eski narxi:</label>
           <input
             type="text"
             className="form-control"
@@ -143,7 +143,7 @@ const EditProduct = ({ product, setProduct, setIsOpen }) => {
           type="submit"
           className="btn btn-primary mt-4   "
         >
-          Edit Product
+          Tahrirlash
         </button>
 
         <button
@@ -152,7 +152,7 @@ const EditProduct = ({ product, setProduct, setIsOpen }) => {
           className="btn btn-danger mt-4 "
           style={{ marginLeft: "5px" }}
         >
-          Cancel
+          Bekor qilish
         </button>
       </form>
     </div>

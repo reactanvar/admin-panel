@@ -10,7 +10,7 @@ const App = () => {
   const [password, setPassword] = useState("");
   const [isLoggined, setIsLoggined] = useState(false);
   const [isLoading, setLoading] = useState(false);
-  const baseUrl = "https://containers-backend.onrender.com/";
+  const baseUrl = "https://devlans-43e2a3ba66d7.herokuapp.com/";
   const [product, setProduct] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -103,7 +103,7 @@ const App = () => {
       />
 
       {/* ALL PRODUCTS */}
-      <h1>ALL PRODUCTS</h1>
+      <h1>Hamma mahsulotlar</h1>
 
       <div
         style={{
@@ -129,7 +129,7 @@ const App = () => {
                 marginTop: "30px",
               }}
             >
-              NO DATA!
+              MA'LUMOT YO'Q
             </h2>
           )
         ) : (
@@ -140,7 +140,7 @@ const App = () => {
               marginTop: "30px",
             }}
           >
-            LOADING...
+            Yuklanmoqda...
           </h2>
         )}
       </div>

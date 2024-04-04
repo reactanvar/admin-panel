@@ -10,10 +10,11 @@ const TableOfItems = ({ data, baseUrl, handleDelete, handleEdit }) => {
         <tr>
           <th scope="col">#</th>
           <th scope="col">№</th>
-          <th scope="col">Name</th>
-          <th scope="col">Price</th>
-          <th scope="col">Old Price</th>
-          <th scope="col">Description</th>
+          <th scope="col">Nomi</th>
+          <th scope="col">Narxi</th>
+          <th scope="col">Eski narx</th>
+          <th scope="col">Kategoriya</th>
+          <th scope="col">Tavsif</th>
           <th scope="col"></th>
         </tr>
       </thead>
@@ -23,24 +24,25 @@ const TableOfItems = ({ data, baseUrl, handleDelete, handleEdit }) => {
             <th className="text-center">
               <img width={100} src={baseUrl + item.image} alt="product image" />
             </th>
-            <th scope="row">{id + 1}</th>
-            <td>{item.name}</td>
-            <td>{item.price}</td>
-            <td>{item.oldPrice}</td>
-            <td>{item.desc.slice(0, 50)}...</td>
+            <th className="text-center" scope="row">{id + 1}</th>
+            <td className="text-center">{item.name}</td>
+            <td className="text-center">{item.price}</td>
+            <td className="text-center">{item.oldPrice}</td>
+            <td className="text-center">{item.category}</td>
+            <td className="text-center">{item.desc.slice(0, 50)}...</td>
             <th className="text-center">
               <button
                 className="btn btn-danger"
                 onClick={() => handleDelete(item)}
               >
-                Delete
+                O'chirish
               </button>
               <button
                 onClick={() => handleEdit(item)}
                 style={{ marginLeft: 5 }}
                 className="btn btn-primary"
               >
-                Edit
+                Tahrirlash
               </button>
             </th>
           </tr>
