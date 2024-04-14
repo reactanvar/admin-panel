@@ -10,11 +10,11 @@ const TableOfItems = ({ data, baseUrl, handleDelete, handleEdit }) => {
         <tr>
           <th scope="col">#</th>
           <th scope="col">№</th>
-          <th scope="col">Nomi</th>
-          <th scope="col">Narxi</th>
-          <th scope="col">Eski narx</th>
-          <th scope="col">Kategoriya</th>
-          <th scope="col">Tavsif</th>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Old Price</th>
+          <th scope="col">Category</th>
+          <th scope="col">Description</th>
           <th scope="col"></th>
         </tr>
       </thead>
@@ -35,14 +35,14 @@ const TableOfItems = ({ data, baseUrl, handleDelete, handleEdit }) => {
                 className="btn btn-danger"
                 onClick={() => handleDelete(item)}
               >
-                O'chirish
+                Delete
               </button>
               <button
                 onClick={() => handleEdit(item)}
                 style={{ marginLeft: 5 }}
                 className="btn btn-primary"
               >
-                Tahrirlash
+                Edit
               </button>
             </th>
           </tr>

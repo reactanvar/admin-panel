@@ -40,7 +40,7 @@ const ProductAdd = () => {
       formDataToSend.append("category", category);
 
       const response = await fetch(
-        "https://devlans-43e2a3ba66d7.herokuapp.com/api/product/add/",
+        "http://194.26.232.140/api/product/add/",
         {
           method: "POST",
           body: formDataToSend,

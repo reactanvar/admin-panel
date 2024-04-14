@@ -10,7 +10,7 @@ const App = () => {
   const [password, setPassword] = useState("");
   const [isLoggined, setIsLoggined] = useState(false);
   const [isLoading, setLoading] = useState(false);
-  const baseUrl = "https://devlans-43e2a3ba66d7.herokuapp.com/";
+  const baseUrl = "http://194.26.232.140/";
   const [product, setProduct] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -44,7 +44,7 @@ const App = () => {
 
     if (areYouSure) {
       try {
-        await fetch(baseUrl + "api/product/del/" + item.id, {
+        await fetch(baseUrl + "api/product/del/" + item._id, {
           method: "DELETE",
         });
 
@@ -103,7 +103,7 @@ const App = () => {
       />
 
       {/* ALL PRODUCTS */}
-      <h1>Hamma mahsulotlar</h1>
+      <h1>ALL PRODUCTS</h1>
 
       <div
         style={{
@@ -129,7 +129,7 @@ const App = () => {
                 marginTop: "30px",
               }}
             >
-              MA'LUMOT YO'Q
+              NO DATA!
             </h2>
           )
         ) : (
@@ -140,7 +140,7 @@ const App = () => {
               marginTop: "30px",
             }}
           >
-            Yuklanmoqda...
+            LOADING...
           </h2>
         )}
       </div>

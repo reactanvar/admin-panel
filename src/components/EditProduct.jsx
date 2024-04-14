@@ -16,7 +16,7 @@ const EditProduct = ({ product, setProduct, setIsOpen }) => {
   };
 
   // edit
-  const handleEdit = async (event, id) => {
+  const handleEdit = async (event, _id) => {
     event.preventDefault();
 
     setLoading(true);
@@ -30,7 +30,7 @@ const EditProduct = ({ product, setProduct, setIsOpen }) => {
       };
 
       const response = await fetch(
-        "https://devlans-43e2a3ba66d7.herokuapp.com/api/product/update/" + id,
+        "http://194.26.232.140/api/product/update/" + _id,
         {
           method: "PATCH",
           body: JSON.stringify(formDataToSend),
@@ -85,9 +85,9 @@ const EditProduct = ({ product, setProduct, setIsOpen }) => {
       }}
       className="container"
     >
-      <form onSubmit={(e) => handleEdit(e, product.id)} className="container">
+      <form onSubmit={(e) => handleEdit(e, product._id)} className="container">
         <div className="form-group">
-          <label htmlFor="name">Nomi:</label>
+          <label htmlFor="name">Name:</label>
           <input
             type="text"
             className="form-control"
@@ -100,7 +100,7 @@ const EditProduct = ({ product, setProduct, setIsOpen }) => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="desc">Tavsif:</label>
+          <label htmlFor="desc">Description:</label>
           <textarea
             className="form-control"
             id="desc"
@@ -113,7 +113,7 @@ const EditProduct = ({ product, setProduct, setIsOpen }) => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="price">Narxi:</label>
+          <label htmlFor="price">Price:</label>
           <input
             type="text"
             className="form-control"
@@ -126,7 +126,7 @@ const EditProduct = ({ product, setProduct, setIsOpen }) => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="oldPrice">Eski narxi:</label>
+          <label htmlFor="oldPrice">Old Price:</label>
           <input
             type="text"
             className="form-control"
@@ -143,7 +143,7 @@ const EditProduct = ({ product, setProduct, setIsOpen }) => {
           type="submit"
           className="btn btn-primary mt-4   "
         >
-          Tahrirlash
+          Edit Product
         </button>
 
         <button
@@ -152,7 +152,7 @@ const EditProduct = ({ product, setProduct, setIsOpen }) => {
           className="btn btn-danger mt-4 "
           style={{ marginLeft: "5px" }}
         >
-          Bekor qilish
+          Cancel
         </button>
       </form>
     </div>

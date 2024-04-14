@@ -48,7 +48,7 @@ const Login = ({
           style={{ padding: 10, cursor: "pointer" }}
           type="submit"
         >
-          Kiritish
+          Enter
         </button>
       </form>
     )
